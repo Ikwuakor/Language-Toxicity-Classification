@@ -111,8 +111,13 @@ When we examine the other classes, there are even more stark class imbalances wi
  --- | --- | --- | --- |--- |--- |--- |--- |
 0 | Logistic Regression Normalized | doc2vec | True | False | 0.81 | 0.54 | 0.65 | 0.94
  --- | --- | --- | --- |--- |--- |--- |--- |
-1 | Logistic Regression Normalized | doc2vec	True	True	0.8	0.52	0.63	0.94
+1 | Logistic Regression Normalized | doc2vec | True | True | 0.8 | 0.52 | 0.63 | 0.94
  --- | --- | --- | --- |--- |--- |--- |--- |
+ 
+ 
+ 
+ 
+ 
 2 | Logistic Regression Normalized | doc2vec	False	False	0.82	0.49	0.62	0.94
  --- | --- | --- | --- |--- |--- |--- |--- |
 3 | Logistic Regression Normalized | doc2vec	False	True	0.81	0.46	0.59	0.94
