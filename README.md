@@ -25,4 +25,85 @@ We can examine which words might prove the most useful in distinguishing one cla
 > + Common words by greater %:
  {'cunt': 'severe_toxic(1.74%)/toxic(0.58%)', 'nigger': 'severe_toxic(1.28%)/toxic(1.15%)', 'gay': 'severe_toxic(0.84%)/toxic(0.48%)', 'wikipedia': 'severe_toxic(1.15%)/toxic(0.84%)', 'shit': 'severe_toxic(3.31%)/toxic(1.14%)', 'suck': 'severe_toxic(3.58%)/toxic(1.05%)', 'die': 'severe_toxic(1.96%)/toxic(0.73%)', 'ass': 'severe_toxic(3.13%)/toxic(0.81%)', 'fucking': 'severe_toxic(1.46%)/toxic(0.72%)', 'fuck': 'severe_toxic(8.75%)/toxic(2.47%)', 'u': 'severe_toxic(2.51%)/toxic(0.75%)'}
  
+ The largest disparities in word usage for the `toxic` and `severe_toxic` classes are for the f-word, with `severe_toxic` comprising 8.75% of it's non-stopword corpus while `toxic` is at a lower 2.47%. The s-word also boast a significant disparity at 3.31% and 1.14% for `severe_toxic` and `toxic` respectively.
+
+> + Unique to Threat: {'page', 'wales', 'talk', 'ban', 'fool', 'di', 'forever', 'live', 'jim', 'go', 'supertrll', 'block', 'murder', 'pathetic', 'edie'}
+> + Unique to Identity Hate: {'cunt', 'niggas', 'nigger', 'mexicans', 'gay', 'like', 'bunksteve', 'licker', 'spanish', 'shit', 'fat', 'suck', 'faggot', 'jew', 'hate'}
+> + Common words by greater %:
+ {'die': 'threat(11.02%)/identity_hate(2.68%)', 'fucking': 'identity_hate(1.07%)/threat(0.98%)', 'ass': 'threat(7.86%)/identity_hate(0.66%)', 'fuck': 'identity_hate(2.74%)/threat(1.13%)', 'kill': 'threat(4.62%)/identity_hate(0.64%)'}
+
+There's a large disparity in usage for the word 'die' favoring the `threat` class over the `identity_hate`, 11.02% to 2.68%. the word 'ass' and 'kill' follow next with disparities of 7.86% to 0.66% and 4.62% to 0.64%, both in favor of the `threat` class. There also appears to be more ethnic and racial slurs among the most popular `identity_hate`-related words than in the `threat`-related words.
+
+> + Unique to Obscene: {'block', 'bullshit'}
+> + Unique to insult: {'jew', 'moron'}
+> + Common words by greater %:
+ {'know': 'insult(0.64%)/obscene(0.56%)', 'page': 'obscene(0.58%)/insult(0.57%)', 'cunt': 'insult(1.12%)/obscene(1.02%)', 'fuck': 'obscene(4.32%)/insult(3.63%)', 'like': 'insult(0.88%)/obscene(0.77%)', 'nigger': 'insult(1.94%)/obscene(1.74%)', 'wikipedia': 'obscene(0.82%)/insult(0.63%)', 'bitch': 'insult(0.82%)/obscene(0.74%)', 'shit': 'obscene(1.79%)/insult(0.9%)', 'suck': 'obscene(1.64%)/insult(1.63%)', 'fat': 'insult(0.98%)/obscene(0.84%)', 'fucking': 'insult(1.27%)/obscene(1.24%)', 'ass': 'obscene(1.4%)/insult(1.13%)', 'die': 'insult(0.79%)/obscene(0.66%)', 'dick': 'obscene(0.57%)/insult(0.54%)', 'u': 'insult(1.31%)/obscene(1.19%)', 'edit': 'obscene(0.59%)/insult(0.57%)', 'hate': 'insult(1.02%)/obscene(0.49%)'}
  
+The `obscene` and `insult` most prevalent common words don't seem to have the same level of disparity as the previous comparisons, with perhaps the word 'hate' having the only somewhat significant disparity, with a prevalence favoring `insult`, 1.02%  to 0.49%. The F-word and S-word are the two words that favor the `obscene` class over the `insult` class, at 4.32% to 3.63% and 1.79% to 0.9%, repectively.
+
+Confusion Matrix for toxic:
+ [[27050   106]
+ [ 1448  1396]]
+              precision    recall  f1-score   support
+
+           0       0.95      1.00      0.97     27156
+           1       0.93      0.49      0.64      2844
+
+    accuracy                           0.95     30000
+Class Balance: 0.905/0.095
+----------------------------------------------------------------------------------------------------
+Confusion Matrix for severe_toxic:
+ [[29665    19]
+ [  285    31]]
+              precision    recall  f1-score   support
+
+           0       0.99      1.00      0.99     29684
+           1       0.62      0.10      0.17       316
+
+    accuracy                           0.99     30000
+Class Balance: 0.989/0.011
+----------------------------------------------------------------------------------------------------
+Confusion Matrix for obscene:
+ [[28344    78]
+ [  730   848]]
+              precision    recall  f1-score   support
+
+           0       0.97      1.00      0.99     28422
+           1       0.92      0.54      0.68      1578
+
+    accuracy                           0.97     30000
+Class Balance: 0.947/0.053
+----------------------------------------------------------------------------------------------------
+Confusion Matrix for threat:
+ [[29904     0]
+ [   96     0]]
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00     29904
+           1       0.00      0.00      0.00        96
+
+    accuracy                           1.00     30000
+Class Balance: 0.997/0.003
+----------------------------------------------------------------------------------------------------
+Confusion Matrix for insult:
+ [[28383   140]
+ [  834   643]]
+              precision    recall  f1-score   support
+
+           0       0.97      1.00      0.98     28523
+           1       0.82      0.44      0.57      1477
+
+    accuracy                           0.97     30000
+Class Balance: 0.951/0.049
+----------------------------------------------------------------------------------------------------
+Confusion Matrix for identity_hate:
+ [[29741     8]
+ [  239    12]]
+              precision    recall  f1-score   support
+
+           0       0.99      1.00      1.00     29749
+           1       0.60      0.05      0.09       251
+
+    accuracy                           0.99     30000
+Class Balance: 0.992/0.008
+----------------------------------------------------------------------------------------------------
