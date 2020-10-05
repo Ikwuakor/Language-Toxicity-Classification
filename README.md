@@ -41,26 +41,23 @@ There's a large disparity in usage for the word 'die' favoring the `threat` clas
  
 The `obscene` and `insult` most prevalent common words don't seem to have the same level of disparity as the previous comparisons, with perhaps the word 'hate' having the only somewhat significant disparity, with a prevalence favoring `insult`, 1.02%  to 0.49%. The F-word and S-word are the two words that favor the `obscene` class over the `insult` class, at 4.32% to 3.63% and 1.79% to 0.9%, repectively.
 
-**----------------------------------------------------------------------------------------------------
-Toxic:
-              precision    recall  f1-score   support
 
+    toxic:              
+              precision    recall       f-1   support              
            0       0.95      1.00      0.97     27156
            1       0.93      0.49      0.64      2844
 
     accuracy                           0.95     30000
-Class Balance: 0.905/0.095
+    Class Balance: 0.905/0.095
 ----------------------------------------------------------------------------------------------------
-Confusion Matrix for severe_toxic:
- [[29665    19]
- [  285    31]]
+    
+    severe_toxic:
               precision    recall  f1-score   support
-
            0       0.99      1.00      0.99     29684
            1       0.62      0.10      0.17       316
 
     accuracy                           0.99     30000
-Class Balance: 0.989/0.011
+    Class Balance: 0.989/0.011
 ----------------------------------------------------------------------------------------------------
 Confusion Matrix for obscene:
  [[28344    78]
