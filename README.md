@@ -108,11 +108,11 @@ With the `toxic` class being the predominant classification, we'll use it as the
 When we examine the other classes, there are even more stark class imbalances with majority classes as high as 99% in some cases. With these classes, accuracy scores are near meaningless. Therefore, we will be comparing f1 scores so that we can capture the precision and recall characteristics. The `toxic`, `obscene` and `insult` classes have more flagged observations, and thus appear to be capturikng more signal, judging from the f1 scores. The `severe_toxic`, `threat`  and `identity_hate` classes have so few flagged observations Naive Bayes doesn't seem to be capturing much signal with f1 scores of 0.17, 0.0 and 0.09, respectively.
 
   no. | model | algorithm |stopwords | pos | precision | recall | f1 | accuracy
- --- | --- | --- | --- |--- |--- |--- |--- |
+ --- | --- | --- | --- |--- |--- |--- |--- 
 0 | Logistic Regression Normalized | doc2vec | True | False | 0.81 | 0.54 | 0.65 | 0.94
- --- | --- | --- | --- |--- |--- |--- |--- |
+ --- | --- | --- | --- |--- |--- |--- |--- 
 1 | Logistic Regression Normalized | doc2vec | True | True | 0.8 | 0.52 | 0.63 | 0.94
- --- | --- | --- | --- |--- |--- |--- |--- |
+ --- | --- | --- | --- |--- |--- |--- |--- 
  
  
  
