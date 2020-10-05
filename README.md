@@ -110,41 +110,21 @@ When we examine the other classes, there are even more stark class imbalances wi
   no. | model | algorithm |stopwords | pos | precision | recall | f1 | accuracy
  --- | --- | --- | --- |--- |--- |--- |--- | ---
 0 | Logistic Regression Normalized | doc2vec | True | False | 0.81 | 0.54 | 0.65 | 0.94
- --- | --- | --- | --- |--- |--- |--- |--- | ---
 1 | Logistic Regression Normalized | doc2vec | True | True | 0.8 | 0.52 | 0.63 | 0.94
- --- | --- | --- | --- |--- |--- |--- |--- | ---
- 
- 
- 
- 
- 
-2 | Logistic Regression Normalized | doc2vec	False	False	0.82	0.49	0.62	0.94
- --- | --- | --- | --- |--- |--- |--- |--- |
-3 | Logistic Regression Normalized | doc2vec	False	True	0.81	0.46	0.59	0.94
- --- | --- | --- | --- |--- |--- |--- |--- |
-4 | Logistic Regression non-Normalized | doc2vec	True	False	0.76	0.47	0.58	0.93
- --- | --- | --- | --- |--- |--- |--- |--- |
-5 | Logistic Regression non-Normalized | doc2vec	True	True	0.75	0.43	0.55	0.93
- --- | --- | --- | --- |--- |--- |--- |--- |
-6 | Logistic Regression non-Normalized | doc2vec	False	False	0.78	0.37	0.5	0.93
- --- | --- | --- | --- |--- |--- |--- |--- |
-7 | Logistic Regression non-Normalized | doc2vec	False	True	0.75	0.34	0.47	0.93
- --- | --- | --- | --- |--- |--- |--- |--- |
-8 | K-Means non-Normalized | doc2vec	False	True	0.1	0.95	0.18	0.16
- --- | --- | --- | --- |--- |--- |--- |--- |
-9 | K-Means Normalized | doc2vec	True	True	0.1	0.53	0.16	0.47
- --- | --- | --- | --- |--- |--- |--- |--- |
-10 | K-Means Normalized | doc2vec	False	True	0.1	0.52	0.16	0.47
- --- | --- | --- | --- |--- |--- |--- |--- |
-11 | K-Means Normalized | doc2vec	False	False	0.1	0.41	0.16	0.59
- --- | --- | --- | --- |--- |--- |--- |--- |
-12 | K-Means Normalized | doc2vec	True	False	0.09	0.45	0.15	0.52
- --- | --- | --- | --- |--- |--- |--- |--- |
-13 | K-Means non-Normalized | doc2vec	True	False	0.07	0.41	0.11	0.57
- --- | --- | --- | --- |--- |--- |--- |--- |
-14 | K-Means non-Normalized | doc2vec	True	True	0.06	0.23	0.08	0.69
- --- | --- | --- | --- |--- |--- |--- |--- |
-15 | K-Means non-Normalized | doc2vec	False	False	0.06	0.04	0.05	0.84
+2 | Logistic Regression Normalized | doc2vec | False | False | 0.82 | 0.49 | 0.62 | 0.94
+3 | Logistic Regression Normalized | doc2vec | False | True | 0.81 | 0.46 | 0.59 | 0.94
+4 | Logistic Regression non-Normalized | doc2vec | True | False | 0.76 | 0.47 | 0.58 | 0.93
+5 | Logistic Regression non-Normalized | doc2vec | True | True | 0.75 | 0.43 | 0.55 | 0.93
+6 | Logistic Regression non-Normalized | doc2vec | False | False | 0.78 | 0.37 | 0.5 | 0.93
+7 | Logistic Regression non-Normalized | doc2vec | False | True | 0.75 | 0.34 | 0.47 | 0.93
+8 | K-Means non-Normalized | doc2vec | False | True | 0.1 | 0.95 | 0.18 | 0.16
+9 | K-Means Normalized | doc2vec | True | True | 0.1 | 0.53 | 0.16 | 0.47
+10 | K-Means Normalized | doc2vec | False | True | 0.1 | 0.52 | 0.16 | 0.47
+11 | K-Means Normalized | doc2vec | False | False | 0.1 | 0.41 | 0.16 | 0.59
+12 | K-Means Normalized | doc2vec | True | False | 0.09 | 0.45 | 0.15 | 0.52
+13 | K-Means non-Normalized | doc2vec | True | False | 0.07 | 0.41 | 0.11 | 0.57
+14 | K-Means non-Normalized | doc2vec | True | True | 0.06 | 0.23 | 0.08 | 0.69
+15 | K-Means non-Normalized | doc2vec | False | False | 0.06 | 0.04 | 0.05 | 0.84
 
 Attempt | #1 | #2 | #3 | #4 | #5 | #6 | #7 | #8 | #9 | #10 | #11
 --- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
