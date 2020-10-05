@@ -34,10 +34,10 @@ We can examine which words might prove the most useful in distinguishing one cla
 
 There's a large disparity in usage for the word 'die' favoring the `threat` class over the `identity_hate`, 11.02% to 2.68%. the word 'ass' and 'kill' follow next with disparities of 7.86% to 0.66% and 4.62% to 0.64%, both in favor of the `threat` class. There also appears to be more ethnic and racial slurs among the most popular `identity_hate`-related words than in the `threat`-related words.
 
-> + Unique to Obscene: {'block', 'bullshit'}
-> + Unique to insult: {'jew', 'moron'}
-> + Common words by greater %:
- {'know': 'insult(0.64%)/obscene(0.56%)', 'page': 'obscene(0.58%)/insult(0.57%)', 'cunt': 'insult(1.12%)/obscene(1.02%)', 'fuck': 'obscene(4.32%)/insult(3.63%)', 'like': 'insult(0.88%)/obscene(0.77%)', 'nigger': 'insult(1.94%)/obscene(1.74%)', 'wikipedia': 'obscene(0.82%)/insult(0.63%)', 'bitch': 'insult(0.82%)/obscene(0.74%)', 'shit': 'obscene(1.79%)/insult(0.9%)', 'suck': 'obscene(1.64%)/insult(1.63%)', 'fat': 'insult(0.98%)/obscene(0.84%)', 'fucking': 'insult(1.27%)/obscene(1.24%)', 'ass': 'obscene(1.4%)/insult(1.13%)', 'die': 'insult(0.79%)/obscene(0.66%)', 'dick': 'obscene(0.57%)/insult(0.54%)', 'u': 'insult(1.31%)/obscene(1.19%)', 'edit': 'obscene(0.59%)/insult(0.57%)', 'hate': 'insult(1.02%)/obscene(0.49%)'}
+    Unique to Obscene: {'block', 'bullshit'}
+    Unique to insult: {'jew', 'moron'}
+    Common words by greater %:
+     {'know': 'insult(0.64%)/obscene(0.56%)', 'page': 'obscene(0.58%)/insult(0.57%)', 'cunt': 'insult(1.12%)/obscene(1.02%)', 'fuck': 'obscene(4.32%)/insult(3.63%)', 'like': 'insult(0.88%)/obscene(0.77%)', 'nigger': 'insult(1.94%)/obscene(1.74%)', 'wikipedia': 'obscene(0.82%)/insult(0.63%)', 'bitch': 'insult(0.82%)/obscene(0.74%)', 'shit': 'obscene(1.79%)/insult(0.9%)', 'suck': 'obscene(1.64%)/insult(1.63%)', 'fat': 'insult(0.98%)/obscene(0.84%)', 'fucking': 'insult(1.27%)/obscene(1.24%)', 'ass': 'obscene(1.4%)/insult(1.13%)', 'die': 'insult(0.79%)/obscene(0.66%)', 'dick': 'obscene(0.57%)/insult(0.54%)', 'u': 'insult(1.31%)/obscene(1.19%)', 'edit': 'obscene(0.59%)/insult(0.57%)', 'hate': 'insult(1.02%)/obscene(0.49%)'}
  
 The `obscene` and `insult` most prevalent common words don't seem to have the same level of disparity as the previous comparisons, with perhaps the word 'hate' having the only somewhat significant disparity, with a prevalence favoring `insult`, 1.02%  to 0.49%. The F-word and S-word are the two words that favor the `obscene` class over the `insult` class, at 4.32% to 3.63% and 1.79% to 0.9%, repectively.
 
