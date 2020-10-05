@@ -51,7 +51,6 @@ The `obscene` and `insult` most prevalent common words don't seem to have the sa
 
     accuracy                           0.95     30000
     Class Balance: 0.905/0.095
----
     
     severe_toxic:
               precision    recall  f1-score   support
