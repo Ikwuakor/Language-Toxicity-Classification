@@ -20,16 +20,16 @@ All the percentages vary widely for each category of abuse. Furthermore, non-abu
 
 We can examine which words might prove the most useful in distinguishing one class from another by comparing which words are both more unique and more frequent for each class. There are 15 possible comparisons we could make between the various classes, but below we just examine a few of the similar-sized classes, as well as the two 'toxic' classifications, to get aglimpse at which words might best define a class.
 
-> + Unique to Toxic: {'page', 'know', 'like', 'article', 'fat', 'pig', 'block', 'edit', 'hate'}
-> + Unique to Severe: {'yourselfgo', 'fucker', 'shut', 'bitch', 'rape', 'piece', 'damn', 'faggot', 'kill'}
-> + Common words by greater %:
+    Unique to Toxic: {'page', 'know', 'like', 'article', 'fat', 'pig', 'block', 'edit', 'hate'}
+    Unique to Severe: {'yourselfgo', 'fucker', 'shut', 'bitch', 'rape', 'piece', 'damn', 'faggot', 'kill'}
+    Common words by greater %:
  {'cunt': 'severe_toxic(1.74%)/toxic(0.58%)', 'nigger': 'severe_toxic(1.28%)/toxic(1.15%)', 'gay': 'severe_toxic(0.84%)/toxic(0.48%)', 'wikipedia': 'severe_toxic(1.15%)/toxic(0.84%)', 'shit': 'severe_toxic(3.31%)/toxic(1.14%)', 'suck': 'severe_toxic(3.58%)/toxic(1.05%)', 'die': 'severe_toxic(1.96%)/toxic(0.73%)', 'ass': 'severe_toxic(3.13%)/toxic(0.81%)', 'fucking': 'severe_toxic(1.46%)/toxic(0.72%)', 'fuck': 'severe_toxic(8.75%)/toxic(2.47%)', 'u': 'severe_toxic(2.51%)/toxic(0.75%)'}
  
  The largest disparities in word usage for the `toxic` and `severe_toxic` classes are for the f-word, with `severe_toxic` comprising 8.75% of it's non-stopword corpus while `toxic` is at a lower 2.47%. The s-word also boast a significant disparity at 3.31% and 1.14% for `severe_toxic` and `toxic` respectively.
 
-> + Unique to Threat: {'page', 'wales', 'talk', 'ban', 'fool', 'di', 'forever', 'live', 'jim', 'go', 'supertrll', 'block', 'murder', 'pathetic', 'edie'}
-> + Unique to Identity Hate: {'cunt', 'niggas', 'nigger', 'mexicans', 'gay', 'like', 'bunksteve', 'licker', 'spanish', 'shit', 'fat', 'suck', 'faggot', 'jew', 'hate'}
-> + Common words by greater %:
+    Unique to Threat: {'page', 'wales', 'talk', 'ban', 'fool', 'di', 'forever', 'live', 'jim', 'go', 'supertrll', 'block', 'murder', 'pathetic', 'edie'}
+    Unique to Identity Hate: {'cunt', 'niggas', 'nigger', 'mexicans', 'gay', 'like', 'bunksteve', 'licker', 'spanish', 'shit', 'fat', 'suck', 'faggot', 'jew', 'hate'}
+    Common words by greater %:
  {'die': 'threat(11.02%)/identity_hate(2.68%)', 'fucking': 'identity_hate(1.07%)/threat(0.98%)', 'ass': 'threat(7.86%)/identity_hate(0.66%)', 'fuck': 'identity_hate(2.74%)/threat(1.13%)', 'kill': 'threat(4.62%)/identity_hate(0.64%)'}
 
 There's a large disparity in usage for the word 'die' favoring the `threat` class over the `identity_hate`, 11.02% to 2.68%. the word 'ass' and 'kill' follow next with disparities of 7.86% to 0.66% and 4.62% to 0.64%, both in favor of the `threat` class. There also appears to be more ethnic and racial slurs among the most popular `identity_hate`-related words than in the `threat`-related words.
