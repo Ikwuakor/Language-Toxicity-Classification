@@ -126,6 +126,4 @@ When we examine the other classes, there are even more stark class imbalances wi
 14 | K-Means non-Normalized | doc2vec | True | True | 0.06 | 0.23 | 0.08 | 0.69
 15 | K-Means non-Normalized | doc2vec | False | False | 0.06 | 0.04 | 0.05 | 0.84
 
-Attempt | #1 | #2 | #3 | #4 | #5 | #6 | #7 | #8 | #9 | #10 | #11
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-Seconds | 301 | 283 | 290 | 286 | 289 | 285 | 287 | 287 | 272 | 276 | 269
+# In progress...
