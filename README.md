@@ -2,6 +2,7 @@
 Classifying abusive language in online forums.
 
 <img src="https://www.flaticon.com/svg/static/icons/svg/595/595067.svg" alt="warning sign" width="50" height="50" align="left">
+
 ### WARNING: the following project contains language that some might find offensive.
 
 ___
