@@ -2,7 +2,7 @@
 Classifying abusive language in online forums
 
 <div>
-    <img style="vertical-align:middle" src="https://user-images.githubusercontent.com/42311832/95642493-2514e380-0a66-11eb-9d21-e2761dac4546.png">
+    <img style="vertical-align:middle" src="https://user-images.githubusercontent.com/42311832/95642493-2514e380-0a66-11eb-9d21-e2761dac4546.png" alt="warning sign" width="80" height="80" >
     <span style=""> Warning: the following project contains language that some might find offensive.</span>
 </div>
 
