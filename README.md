@@ -475,31 +475,31 @@ The bigrams TF-IDF model has performed worse than the 'out-of-the-box' TF-IDF mo
 
 Some of the **false positives** in our model seem to convey language that, given a certain context, could most certainly be classified as toxic.
 
---> yo mama yo mama yo mama 
+    --> yo mama yo mama yo mama 
 
---> bite me irishguy contextflexed 
+    --> bite me irishguy contextflexed 
 
---> the block page says i should add this to my page so there it goes someone fix this and get these power corrupt idiots to stop stalking me
+    --> the block page says i should add this to my page so there it goes someone fix this and get these power corrupt idiots to stop stalking me
 
 They typically tend to convey dissatisfaction of some kind, with some of them even getting away with use of bad words, albeit not always in a manner meant to insult.
 
---> nan bread is a b**** to make how do you do it i can make chicken marsala but not the indan breads 
+    --> nan bread is a b**** to make how do you do it i can make chicken marsala but not the indan breads 
 
---> thanks sorry i didn't know you weren't allowed to write things like that on articles my bad c***
+    --> thanks sorry i didn't know you weren't allowed to write things like that on articles my bad c***
 
 Some of the **false negatives** have contextually harsh language, but which contain words that, on their own, don't necessarily convey toxicity.
 
---> baby eaters alright is it true that some of the band's songs translate into lyrics like i'm going to cut open your fetus and eat your baby or other horrific lyrics 
+    --> baby eaters alright is it true that some of the band's songs translate into lyrics like i'm going to cut open your fetus and eat your baby or other horrific lyrics 
 
---> you love the devil and worship him
+    --> you love the devil and worship him
 
 Other false negatives seem to convey mild dissatisfaction, but nothing that seems obviously toxic. Perhaps some of these abusive comments borrow context from the comments they were replying to? If so, that makes classification that much trickier.
 
---> whats the deal you can put crap on my talk page but i cant put crap on yours you're real cool dude
+    --> whats the deal you can put crap on my talk page but i cant put crap on yours you're real cool dude
 
 Perhaps this one escaped detection by our model due to a convenient typo.
 
---> go and complain me again for personal attack looser i do not care
+    --> go and complain me again for personal attack looser i do not care
 
 
 In the end, whatever it is we're capturing, the TF-IDF, with algorithm generated features, outperformed all our other models across all models (though slightly outperformed by targeted BOWS in the `toxic` class. It also requires the least amount of text modification (no lemmatization) and supplementary functions. With it being the quickest, and easiest model to run, it is the clear winner, performing as well, or better than any of the other models, and in each and every class. Unfortunately, none of the models managed to post impressive results across the board, most likely due to some of the classes having too few instances with which to train a model adequately. A possible solution might be to allow content providers to manually add words to the feature set that they want to trigger an automatic comment flag, either for automatic removal or for human review.
