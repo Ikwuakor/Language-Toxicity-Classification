@@ -139,7 +139,7 @@ no. | model | algorithm | stopwords | pos | precision | recall | f1 | accuracy
 Lemmatization has earned slight improvements for f-1, recall and precision scores while maintaining its accuracy score. Again, the exclusion of parts of speech tags slightly underperformed the model with its inclusion. We'll now run a Logistic Regression random search to tune hyperparameters.
 
 no. | C | max_iter | class_weight | solver | d2v_params | train_precision | test_precision | train_recall | test_recall | train_acc | test_acc | train_f1 | test_f1
- --- | --- | --- | --- |--- |--- |--- |--- | ---| --- |--- |--- |--- |--- | ---
+ --- | --- | --- | --- |--- |--- |--- |--- | ---| --- |--- |--- |--- |--- 
 0 | 1000 | 1000 | nan | sag | {'dm': 0, 'vector_size': 300, 'window': 3, 'dm_mean': 1, 'iter': 50} | 0.830483 | 0.820856 | 0.660165 | 0.647679 | 0.954114 | 0.9532 | 0.735594 | 0.724057
 1 | 5 | 2000 | nan | sag | {'dm': 0, 'vector_size': 300, 'window': 3, 'dm_mean': 1, 'iter': 50} | 0.835995 | 0.828204 | 0.657506 | 0.633966 | 0.954414 | 0.952833 | 0.736085 | 0.718184
 2 | 5 | 2000 | nan | saga | {'dm': 0, 'vector_size': 300, 'window': 3, 'dm_mean': 1, 'iter': 50} | 0.835995 | 0.828204 | 0.657506 | 0.633966 | 0.954414 | 0.952833 | 0.736085 | 0.718184
