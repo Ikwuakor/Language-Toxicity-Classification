@@ -316,4 +316,192 @@ Our TF-IDF model has matched, or outperformed, Doc2vec with every class.
 
 With the following model, we will create features, using the most common words flagged for each class.
 
+    toxic:
+              precision    recall  f1-score   support
+
+           0       0.96      0.99      0.98     27156
+           1       0.87      0.64      0.74      2844
+
+    accuracy                           0.96     30000
+    Class Balance: 0.905/0.095
+    Execution time: 31.41 seconds
+    ----------------------------------------------------------------------------------------------------
+    severe_toxic:
+              precision    recall  f1-score   support
+
+           0       0.99      1.00      0.99     29684
+           1       0.48      0.16      0.24       316
+
+    accuracy                           0.99     30000
+    Class Balance: 0.989/0.011
+    Execution time: 34.91 seconds
+    ----------------------------------------------------------------------------------------------------
+    obscene:
+              precision    recall  f1-score   support
+
+           0       0.98      0.99      0.99     28422
+           1       0.88      0.69      0.78      1578
+
+    accuracy                           0.98     30000
+    Class Balance: 0.947/0.053
+    Execution time: 29.06 seconds
+    ----------------------------------------------------------------------------------------------------
+    threat:
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00     29904
+           1       0.24      0.05      0.09        96
+
+    accuracy                           1.00     30000
+    Class Balance: 0.997/0.003
+    Execution time: 26.4 seconds
+    ----------------------------------------------------------------------------------------------------
+    insult:
+              precision    recall  f1-score   support
+
+           0       0.98      0.99      0.98     28523
+           1       0.78      0.55      0.64      1477
+
+    accuracy                           0.97     30000
+    Class Balance: 0.951/0.049
+    Execution time: 34.38 seconds
+    ----------------------------------------------------------------------------------------------------
+    identity_hate:
+              precision    recall  f1-score   support
+
+           0       0.99      1.00      1.00     29749
+           1       0.51      0.16      0.25       251
+
+    accuracy                           0.99     30000
+    Class Balance: 0.992/0.008
+    Execution time: 28.93 seconds
+
+# The Best (TFIDF, Targeted Features) Recipe
+> + TfidfVectorizer(max_df=0.9, min_df=100, use_idf=True, token_pattern=r'\w{2,}', sublinear_tf=True, vocabulary=bows)
++ LogisticRegression(C=5, class_weight=None, max_iter=3000, solver='sag', random_state=0)
+
+We now compare the TF-IDF model with algorithmically generated features to our TF-IDF, target features model:
+
++ toxic: 0.74 (up from 0.73 for TF-IDF)
++ severe_toxic: 0.24 (DOWN from 0.30)
++ obscene: 0.78 (up from 0.77)
++ threat: 0.09 (DOWN from 0.25)
++ insult: 0.64 (same as 0.64 for TF-IDF)
++ identity_hate: 0.25 (DOWN from 0.35)
+
+The targeted TF-IDF model has performed worse than the 'out-of-the-box' TF-IDF model.
+
+## Bigrams
+
+> TfidfVectorizer(analyzer='word', binary=False, decode_error='strict',
+                dtype=<class 'numpy.float64'>, encoding='utf-8',
+                input='content', lowercase=True, max_df=0.9, max_features=3000,
+                min_df=2, **ngram_range=(1, 2)**, norm='l2', preprocessor=None,
+                smooth_idf=True, stop_words='english', strip_accents=None,
+                sublinear_tf=True, token_pattern='\\w{2,}', tokenizer=None,
+                use_idf=True, vocabulary=None)
+
+    Log_loss score for toxic is 1.586488565328999
+              precision    recall  f1-score   support
+
+           0       0.96      0.99      0.98     27161
+           1       0.86      0.61      0.72      2839
+
+    accuracy                           0.95     30000
+    Class Balance: 0.905/0.095
+    ----------------------------------------------------------------------------------------------------
+    Log_loss score for severe_toxic is 0.3154554904025688
+              precision    recall  f1-score   support
+
+           0       0.99      1.00      1.00     29698
+           1       0.61      0.26      0.36       302
+
+    accuracy                           0.99     30000
+    Class Balance: 0.99/0.01
+    ----------------------------------------------------------------------------------------------------
+    Log_loss score for obscene is 0.8013031305906215
+              precision    recall  f1-score   support
+
+           0       0.98      1.00      0.99     28400
+           1       0.89      0.65      0.75      1600
+
+    accuracy                           0.98     30000
+    Class Balance: 0.947/0.053
+    ----------------------------------------------------------------------------------------------------
+    Log_loss score for threat is 0.11052440430268726
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00     29898
+           1       0.60      0.18      0.27       102
+
+    accuracy                           1.00     30000
+    Class Balance: 0.997/0.003
+    ----------------------------------------------------------------------------------------------------
+    Log_loss score for insult is 1.084523549127675
+              precision    recall  f1-score   support
+
+           0       0.98      0.99      0.98     28527
+           1       0.77      0.51      0.62      1473
+
+    accuracy                           0.97     30000
+    Class Balance: 0.951/0.049
+    ----------------------------------------------------------------------------------------------------
+    Log_loss score for identity_hate is 0.28552140443518814
+              precision    recall  f1-score   support
+
+           0       0.99      1.00      1.00     29734
+           1       0.61      0.19      0.29       266
+
+    accuracy                           0.99     30000
+    Class Balance: 0.991/0.009
+
+# The Best Bigrams, TF-IDF Recipe
+> + TfidfVectorizer(max_df=0.9, min_df=100, use_idf=True, token_pattern=r'\w{2,}', sublinear_tf=True, vocabulary=bows)
++ LogisticRegression(C=5, class_weight=None, max_iter=3000, solver='sag', random_state=0)
+
+We now compare the TF-IDF model with algorithmically generated features to our TF-IDF, target features model:
+
++ toxic: 0.72 (DOWN from 0.73 for TF-IDF)
++ severe_toxic: 0.36 (up from 0.30)
++ obscene: 0.75 (DOWN from 0.77)
++ threat: 0.27 (up from 0.25)
++ insult: 0.62 (DOWN from 0.64)
++ identity_hate: 0.29 (DOWN from 0.35)
+
+The bigrams TF-IDF model has performed worse than the 'out-of-the-box' TF-IDF model for four out of six classes, including the primary class of `toxic`.
+
+# Conclusion
+> Without a clear set of directives determining what makes a comment fall into one, or more, of the abusive categories, it's hard to gauge whether we are capturing a set of hard and fast rules with which these comments were originally classified or if we're simply back-engineering the subjective biases of the humans who originally flagged these comments. Are these moderator flagged comments? Community flagged comments? Do some of the flagged comments become toxic only after they borrow context from other comments they were replying to; comments which may have avoided being flagged themselves?
+
+Some of the **false positives** in our model seem to convey language that, given a certain context, could most certainly be classified as toxic.
+
+--> yo mama yo mama yo mama 
+
+--> bite me irishguy contextflexed 
+
+--> the block page says i should add this to my page so there it goes someone fix this and get these power corrupt idiots to stop stalking me
+
+They typically tend to convey dissatisfaction of some kind, with some of them even getting away with use of bad words, albeit not always in a manner meant to insult.
+
+--> nan bread is a b**** to make how do you do it i can make chicken marsala but not the indan breads 
+
+--> thanks sorry i didn't know you weren't allowed to write things like that on articles my bad c***
+
+Some of the **false negatives** have contextually harsh language, but which contain words that, on their own, don't necessarily convey toxicity.
+
+--> baby eaters alright is it true that some of the band's songs translate into lyrics like i'm going to cut open your fetus and eat your baby or other horrific lyrics 
+
+--> you love the devil and worship him
+
+Other false negatives seem to convey mild dissatisfaction, but nothing that seems obviously toxic. Perhaps some of these abusive comments borrow context from the comments they were replying to? If so, that makes classification that much trickier.
+
+--> whats the deal you can put crap on my talk page but i cant put crap on yours you're real cool dude
+
+Perhaps this one escaped detection by our model due to a convenient typo.
+
+--> go and complain me again for personal attack looser i do not care
+
+
+In the end, whatever it is we're capturing, the TF-IDF, with algorithm generated features, outperformed all our other models across all models (though slightly outperformed by targeted BOWS in the `toxic` class. It also requires the least amount of text modification (no lemmatization) and supplementary functions. With it being the quickest, and easiest model to run, it is the clear winner, performing as well, or better than any of the other models, and in each and every class. Unfortunately, none of the models managed to post impressive results across the board, most likely due to some of the classes having too few instances with which to train a model adequately. A possible solution might be to allow content providers to manually add words to the feature set that they want to trigger an automatic comment flag, either for automatic removal or for human review.
+
 # In progress...
