@@ -228,7 +228,7 @@ We now extend our optimal model to all of the classes.
 
 # TF-IDF
 
-> TfidfVectorizer(analyzer='word', binary=False, decode_error='strict',
+> + TfidfVectorizer(analyzer='word', binary=False, decode_error='strict',
                 dtype=<class 'numpy.float64'>, encoding='utf-8',
                 input='content', lowercase=True, max_df=0.9, max_features=None,
                 min_df=100, ngram_range=(1, 1), norm='l2', preprocessor=None,
