@@ -244,5 +244,59 @@ no. | C | max_iter | class_weight | solver | train_precision | test_precision | 
 11 | 1000 | 3000 | None | sag | 0.896705 | 0.795181 | 0.715721 | 0.649789 | 0.964543 | 0.950933 | 0.796056 | 0.71517
 26 | 100000 | 3000 | None | saga | 0.896456 | 0.79006	0.717642 | 0.648383 | 0.964686 | 0.950333 | 0.797144 | 0.712244
 
+    Log_loss score for toxic is 1.5335290548836404
+              precision    recall  f1-score   support
+              
+           0       0.96      0.99      0.98     27161
+           1       0.87      0.63      0.73      2839
+
+    accuracy                           0.96     30000
+    Class Balance: 0.905/0.095
+    
+    Log_loss score for severe_toxic is 0.3258173632002711
+              precision    recall  f1-score   support
+
+           0       0.99      1.00      1.00     29698
+           1       0.57      0.26      0.36       302
+
+    accuracy                           0.99     30000
+    Class Balance: 0.99/0.01
+
+    Log_loss score for obscene is 0.7897900452061652
+              precision    recall  f1-score   support
+
+           0       0.98      1.00      0.99     28400
+           1       0.89      0.65      0.75      1600
+
+    accuracy                           0.98     30000
+    Class Balance: 0.947/0.053
+
+    Log_loss score for threat is 0.1082218192096932
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00     29898
+           1       0.62      0.20      0.30       102
+
+    accuracy                           1.00     30000
+    Class Balance: 0.997/0.003
+
+    Log_loss score for insult is 1.070707851996977
+              precision    recall  f1-score   support
+
+           0       0.98      0.99      0.98     28527
+           1       0.78      0.52      0.62      1473
+
+    accuracy                           0.97     30000
+    Class Balance: 0.951/0.049
+
+    Log_loss score for identity_hate is 0.27515971821021956
+              precision    recall  f1-score   support
+
+           0       0.99      1.00      1.00     29734
+           1       0.66      0.21      0.32       266
+
+    accuracy                           0.99     30000
+    Class Balance: 0.991/0.009
+    ----------------------------------------------------------------------------------------------------
 
 # In progress...
