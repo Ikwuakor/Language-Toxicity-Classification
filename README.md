@@ -146,4 +146,94 @@ no. | C | max_iter | class_weight | solver | d2v_params | train_precision | test
 3 | 100000 | 2000 | nan | newton-cg | {'dm': 0, 'vector_size': 300, 'window': 3, 'dm_mean': 1, 'iter': 50} | 0.832091 | 0.822808 | 0.659722 | 0.636779 | 0.954229 | 0.952567 | 0.735949 | 0.717939
 4 | 1 | 3000 | nan | sag | {'dm': 0, 'vector_size': 300, 'window': 3, 'dm_mean': 1, 'iter': 50} | 0.843574 | 0.835905 | 0.643026 | 0.628692 | 0.953957 | 0.9531 | 0.729773 | 0.71764
 
+# The Best Doc2vec Recipe
+
+> + Lemmatized documents, normalized vectors
+> + Doc2Vec(dm=0, vector_size=300, window=3, dm_mean=1, iter=50)
+> + LogisticRegression(C=1000, max_iter=1000, class_weight=None, solver='sag')
+
+With the above pipeline, we've managed to maximize our preferred criteria, `test_f1`. With a test accuracy of 0.9532, we've captured over 50% of the remaining accuracy that was up for grabs when given a baseline accuracy of nearly 90% for all non-abusive comments. Our recall score represents our minority class, and we are capturing almost 65% of the `toxic` comments with over 82% of the observations predicted to be `toxic` actually being toxic.
+
+We now extend our optimal model to all of the classes.
+
+    Log_loss score for toxic is -0.12608957538569543
+              precision    recall  f1-score   support
+
+           0       0.96      0.99      0.97     27156
+           1       0.84      0.63      0.72      2844
+
+    accuracy                           0.95     30000
+    macro avg       0.90      0.81      0.85     30000
+    weighted avg       0.95      0.95      0.95     30000
+
+    Log_loss score for severe_toxic is -0.027014954122679874
+              precision    recall  f1-score   support
+
+           0       0.99      1.00      0.99     29684
+           1       0.49      0.17      0.25       316
+
+    accuracy                           0.99     30000
+    macro avg       0.74      0.58      0.62     30000
+    weighted avg       0.99      0.99      0.99     30000
+
+    Log_loss score for obscene is -0.06876860305325452
+              precision    recall  f1-score   support
+
+           0       0.98      0.99      0.99     28422
+           1       0.85      0.66      0.74      1578
+
+    accuracy                           0.98     30000
+    macro avg       0.92      0.83      0.86     30000
+    weighted avg       0.97      0.98      0.97     30000
+
+    Log_loss score for threat is -0.010428913922936826
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00     29904
+           1       0.90      0.09      0.17        96
+
+    accuracy                           1.00     30000
+    macro avg       0.95      0.55      0.58     30000
+    weighted avg       1.00      1.00      1.00     30000
+
+    Log_loss score for insult is -0.08016496842596106
+              precision    recall  f1-score   support
+
+           0       0.98      0.99      0.98     28523
+           1       0.76      0.55      0.64      1477
+
+    accuracy                           0.97     30000
+    macro avg       0.87      0.77      0.81     30000
+    weighted avg       0.97      0.97      0.97     30000
+
+    Log_loss score for identity_hate is -0.025609311483858456
+               precision    recall  f1-score   support
+
+           0       0.99      1.00      1.00     29749
+           1       0.70      0.15      0.24       251
+
+    accuracy                           0.99     30000
+    macro avg       0.85      0.57      0.62     30000
+    weighted avg       0.99      0.99      0.99     30000
+
+> Although still low in some cases, the f1 score for the classes, other than `toxic`, have made improvements with the Doc2vec model:
+
++ toxic: 0.72 (up from 0.64 for Naive Bayes)
++ severe_toxic: 0.25 (up from 0.17)
++ obscene: 0.74 (up from 0.68)
++ threat: 0.17 (up from 0.00)
++ insult: 0.64 (up from 0.57)
++ identity_hate: 0.24 (up from 0.09)
+
+
+# TF-IDF
+
+> TfidfVectorizer(analyzer='word', binary=False, decode_error='strict',
+                dtype=<class 'numpy.float64'>, encoding='utf-8',
+                input='content', lowercase=True, max_df=0.9, max_features=None,
+                min_df=100, ngram_range=(1, 1), norm='l2', preprocessor=None,
+                smooth_idf=True, stop_words='english', strip_accents=None,
+                sublinear_tf=True, token_pattern='\\w{2,}', tokenizer=None,
+                use_idf=True, vocabulary=None)
+
 # In progress...
