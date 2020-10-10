@@ -126,4 +126,24 @@ When we examine the other classes, there are even more stark class imbalances wi
 14 | K-Means non-Normalized | doc2vec | True | True | 0.06 | 0.23 | 0.08 | 0.69
 15 | K-Means non-Normalized | doc2vec | False | False | 0.06 | 0.04 | 0.05 | 0.84
 
+Clearly the Normalized, Logistic Regression is superior to the K-means classifier and slightly edge out the non-Normalized Logistic Regression. The inclusion of stopwords is a clear boost in sentiment retention. The inclusion of parts of speech (pos) seems to underperform the exclusion of parts of speech, albeit not by much. The Logistic Regression, Normalized	doc2vec	model, with stopwords=True and pos=False, was the top scorer in all categories except recall, where it scored second, and precision where it score a close second. Next, we'll examine whether lemmas can provide additional sentiment retention, keeping stopwords throughout and, again, comparing with and without parts of speech.
+
+no. | model | algorithm | stopwords | pos | precision | recall | f1 | accuracy
+ --- | --- | --- | --- |--- |--- |--- |--- | ---
+0 | Lemmatized Log Reg Normalized | doc2vec | True | False | 0.82 | 0.55 | 0.66 | 0.94
+1 | Logistic Regression Normalized | doc2vec | True | False | 0.81 | 0.54 | 0.65 | 0.94
+2 | Logistic Regression Normalized | doc2vec | True | True | 0.8 | 0.52 | 0.63 | 0.94
+3 | Lemmatized Log Reg Normalized | doc2vec | True | True | 0.81 | 0.52 | 0.63 | 0.94
+4 | Logistic Regression Normalized | doc2vec | False | False | 0.82 | 0.49 | 0.62 | 0.94
+
+Lemmatization has earned slight improvements for f-1, recall and precision scores while maintaining its accuracy score. Again, the exclusion of parts of speech tags slightly underperformed the model with its inclusion. We'll now run a Logistic Regression random search to tune hyperparameters.
+
+no. | C | max_iter | class_weight | solver | d2v_params | train_precision | test_precision | train_recall | test_recall | train_acc | test_acc | train_f1 | test_f1
+ --- | --- | --- | --- |--- |--- |--- |--- | ---| --- |--- |--- |--- |--- | ---
+0 | 1000 | 1000 | nan | sag | {'dm': 0, 'vector_size': 300, 'window': 3, 'dm_mean': 1, 'iter': 50} | 0.830483 | 0.820856 | 0.660165 | 0.647679 | 0.954114 | 0.9532 | 0.735594 | 0.724057
+1 | 5 | 2000 | nan | sag | {'dm': 0, 'vector_size': 300, 'window': 3, 'dm_mean': 1, 'iter': 50} | 0.835995 | 0.828204 | 0.657506 | 0.633966 | 0.954414 | 0.952833 | 0.736085 | 0.718184
+2 | 5 | 2000 | nan | saga | {'dm': 0, 'vector_size': 300, 'window': 3, 'dm_mean': 1, 'iter': 50} | 0.835995 | 0.828204 | 0.657506 | 0.633966 | 0.954414 | 0.952833 | 0.736085 | 0.718184
+3 | 100000 | 2000 | nan | newton-cg | {'dm': 0, 'vector_size': 300, 'window': 3, 'dm_mean': 1, 'iter': 50} | 0.832091 | 0.822808 | 0.659722 | 0.636779 | 0.954229 | 0.952567 | 0.735949 | 0.717939
+4 | 1 | 3000 | nan | sag | {'dm': 0, 'vector_size': 300, 'window': 3, 'dm_mean': 1, 'iter': 50} | 0.843574 | 0.835905 | 0.643026 | 0.628692 | 0.953957 | 0.9531 | 0.729773 | 0.71764
+
 # In progress...
