@@ -1,7 +1,7 @@
 # Language Toxicity Classification
 Classifying abusive language in online forums
 
-<img src="![image](https://user-images.githubusercontent.com/42311832/95642493-2514e380-0a66-11eb-9d21-e2761dac4546.png)" alt="warning sign" width="50" height="60"> 
+<img src="https://user-images.githubusercontent.com/42311832/95642493-2514e380-0a66-11eb-9d21-e2761dac4546.png" alt="warning sign" width="50" height="60"> 
 
 ## Warning: the following project contains content that some might find offensive. 
 <img src="https://www.flaticon.com/svg/static/icons/svg/595/595067.svg" alt="warning sign" width="50" height="60"> 
