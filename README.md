@@ -57,7 +57,7 @@ The `obscene` and `insult` most prevalent common words don't seem to have the sa
 
     accuracy                           0.95     30000
     Class Balance: 0.905/0.095
-    
+    ----------------------------------------------------------------------------------------------------
     severe_toxic:
               precision    recall  f1-score   support
               
@@ -66,7 +66,7 @@ The `obscene` and `insult` most prevalent common words don't seem to have the sa
 
     accuracy                           0.99     30000
     Class Balance: 0.989/0.011
-    
+    ----------------------------------------------------------------------------------------------------
     obscene:
               precision    recall  f1-score   support
 
@@ -75,7 +75,7 @@ The `obscene` and `insult` most prevalent common words don't seem to have the sa
 
     accuracy                           0.97     30000
     Class Balance: 0.947/0.053
-    
+    ----------------------------------------------------------------------------------------------------
     threat:
               precision    recall  f1-score   support
 
@@ -84,7 +84,7 @@ The `obscene` and `insult` most prevalent common words don't seem to have the sa
 
     accuracy                           1.00     30000
     Class Balance: 0.997/0.003
-    
+    ----------------------------------------------------------------------------------------------------
     insult:
               precision    recall  f1-score   support
 
@@ -93,7 +93,7 @@ The `obscene` and `insult` most prevalent common words don't seem to have the sa
 
     accuracy                           0.97     30000
     Class Balance: 0.951/0.049
-    
+    ----------------------------------------------------------------------------------------------------
     identity_hate:
               precision    recall  f1-score   support
 
@@ -165,7 +165,7 @@ We now extend our optimal model to all of the classes.
     accuracy                           0.95     30000
     macro avg       0.90      0.81      0.85     30000
     weighted avg       0.95      0.95      0.95     30000
-
+    ----------------------------------------------------------------------------------------------------
     Log_loss score for severe_toxic is -0.027014954122679874
               precision    recall  f1-score   support
 
@@ -175,7 +175,7 @@ We now extend our optimal model to all of the classes.
     accuracy                           0.99     30000
     macro avg       0.74      0.58      0.62     30000
     weighted avg       0.99      0.99      0.99     30000
-
+    ----------------------------------------------------------------------------------------------------
     Log_loss score for obscene is -0.06876860305325452
               precision    recall  f1-score   support
 
@@ -185,7 +185,7 @@ We now extend our optimal model to all of the classes.
     accuracy                           0.98     30000
     macro avg       0.92      0.83      0.86     30000
     weighted avg       0.97      0.98      0.97     30000
-
+    ----------------------------------------------------------------------------------------------------
     Log_loss score for threat is -0.010428913922936826
               precision    recall  f1-score   support
 
@@ -195,7 +195,7 @@ We now extend our optimal model to all of the classes.
     accuracy                           1.00     30000
     macro avg       0.95      0.55      0.58     30000
     weighted avg       1.00      1.00      1.00     30000
-
+    ----------------------------------------------------------------------------------------------------
     Log_loss score for insult is -0.08016496842596106
               precision    recall  f1-score   support
 
@@ -205,7 +205,7 @@ We now extend our optimal model to all of the classes.
     accuracy                           0.97     30000
     macro avg       0.87      0.77      0.81     30000
     weighted avg       0.97      0.97      0.97     30000
-
+    ----------------------------------------------------------------------------------------------------
     Log_loss score for identity_hate is -0.025609311483858456
                precision    recall  f1-score   support
 
@@ -252,7 +252,7 @@ no. | C | max_iter | class_weight | solver | train_precision | test_precision | 
 
     accuracy                           0.96     30000
     Class Balance: 0.905/0.095
-    
+    ----------------------------------------------------------------------------------------------------
     Log_loss score for severe_toxic is 0.3258173632002711
               precision    recall  f1-score   support
 
@@ -261,7 +261,7 @@ no. | C | max_iter | class_weight | solver | train_precision | test_precision | 
 
     accuracy                           0.99     30000
     Class Balance: 0.99/0.01
-
+    ----------------------------------------------------------------------------------------------------
     Log_loss score for obscene is 0.7897900452061652
               precision    recall  f1-score   support
 
@@ -270,7 +270,7 @@ no. | C | max_iter | class_weight | solver | train_precision | test_precision | 
 
     accuracy                           0.98     30000
     Class Balance: 0.947/0.053
-
+    ----------------------------------------------------------------------------------------------------
     Log_loss score for threat is 0.1082218192096932
               precision    recall  f1-score   support
 
@@ -279,7 +279,7 @@ no. | C | max_iter | class_weight | solver | train_precision | test_precision | 
 
     accuracy                           1.00     30000
     Class Balance: 0.997/0.003
-
+    ----------------------------------------------------------------------------------------------------
     Log_loss score for insult is 1.070707851996977
               precision    recall  f1-score   support
 
@@ -288,7 +288,7 @@ no. | C | max_iter | class_weight | solver | train_precision | test_precision | 
 
     accuracy                           0.97     30000
     Class Balance: 0.951/0.049
-
+    ----------------------------------------------------------------------------------------------------
     Log_loss score for identity_hate is 0.27515971821021956
               precision    recall  f1-score   support
 
@@ -297,6 +297,23 @@ no. | C | max_iter | class_weight | solver | train_precision | test_precision | 
 
     accuracy                           0.99     30000
     Class Balance: 0.991/0.009
-    ----------------------------------------------------------------------------------------------------
+
+# The Best TF-IDF Recipe
+> + TfidfVectorizer(max_df=0.9, min_df=100, ngram_range=(1, 1), smooth_idf=True, token_pattern='\\w{2,}', use_idf=True)
+> + LogisticRegression(C=5, class_weight=None, max_iter=3000, solver='sag')
+
+With the above pipeline, we've managed to maximize our preferred criteria, test_f1. The test accuracy has increased to 96%, capturing nearly 60% of the remaining accuracy above the `toxic` baseline of 90%. Our recall scores have fallen slightly to 63% but the precision has risen to 87% for a comparable f1 score of 0.73. Again, we'll compare TF-IDF with the Doc2vec model:
++ toxic: 0.73 (up from 0.72 for Doc2vec/Logistic Regression)
++ severe_toxic: 0.30 (up from 0.25)
++ obscene: 0.77 (up from 0.74)
++ threat: 0.25 ( up from 0.17)
++ insult: 0.64 (same as 0.64 for Doc2vec/Logistic Regression)
++ identity_hate: 0.35 (up from 0.24)
+
+Our TF-IDF model has matched, or outperformed, Doc2vec with every class.
+
+## Targeted Features
+
+With the following model, we will create features, using the most common words flagged for each class.
 
 # In progress...
