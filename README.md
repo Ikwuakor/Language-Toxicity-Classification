@@ -216,7 +216,7 @@ We now extend our optimal model to all of the classes.
     macro avg       0.85      0.57      0.62     30000
     weighted avg       0.99      0.99      0.99     30000
 
-> Although still low in some cases, the f1 score for the classes, other than `toxic`, have made improvements with the Doc2vec model:
+Although still low in some cases, the f1 score for the classes, other than `toxic`, have made improvements with the Doc2vec model:
 
 + toxic: 0.72 (up from 0.64 for Naive Bayes)
 + severe_toxic: 0.25 (up from 0.17)
@@ -235,5 +235,14 @@ We now extend our optimal model to all of the classes.
                 smooth_idf=True, stop_words='english', strip_accents=None,
                 sublinear_tf=True, token_pattern='\\w{2,}', tokenizer=None,
                 use_idf=True, vocabulary=None)
+
+no. | C | max_iter | class_weight | solver | train_precision | test_precision | train_recall | test_recall | train_acc | test_acc | train_f1 | test_f1
+ --- | --- | --- | --- |--- |--- |--- |--- | ---| --- |--- |--- |--- 
+25 | 5 | 3000 | None | sag | 0.909903 | 0.872602 | 0.66253 | 0.623769 | 0.961029 | 0.9557 | 0.766758 | 0.727496
+6 | 1000 | 1000 | None | lbfgs | 0.896705 | 0.795181 | 0.715721 | 0.649789 | 0.964543 | 0.950933 | 0.796056 | 0.71517
+7 | 1000 | 1000 | None | saga | 0.896501 | 0.795181 | 0.715426 | 0.649789 | 0.9645 | 0.950933 | 0.795793 | 0.71517
+11 | 1000 | 3000 | None | sag | 0.896705 | 0.795181 | 0.715721 | 0.649789 | 0.964543 | 0.950933 | 0.796056 | 0.71517
+26 | 100000 | 3000 | None | saga | 0.896456 | 0.79006	0.717642 | 0.648383 | 0.964686 | 0.950333 | 0.797144 | 0.712244
+
 
 # In progress...
