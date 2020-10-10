@@ -1,5 +1,8 @@
 # Language Toxicity Classification
 Classifying abusive language in online forums
+
+![image](https://user-images.githubusercontent.com/42311832/95642244-88057b00-0a64-11eb-9f86-431f184aed9f.png)
+Warning: the following project contains content that some might find offensive.
 ___
 >Many online content providers depend upon an engaged and active online community, oftentimes for the creation of content itself, and need ways to ensure their site is an attractive destination for repeat web traffic. One of the ways they often achieve this is through an engaging online forum. However, when abusive community members are allowed to make a forum feel toxic, many of the other members can be turned off by this behavior and begin to limit, if not completely eliminate, their level of engagement in the community. This can lead to a reduction in content, along with the inherent resulting revenue losses, and a reduction in forum vibrancy. This can potentially lead to an overall stale web experience, inspiring others to abstain as well.
 
